@@ -9,7 +9,7 @@ let lexicalChecker = false;
 let syntaxChecker = false;
 let semanticChecker = true;
 
-function analyzer(){
+function analyze(){
 
     var userInput = document.getElementById("userInput").value;
 
