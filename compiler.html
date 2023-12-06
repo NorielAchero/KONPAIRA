@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiler</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <label for="userInput">Enter space-separated values:</label>
+    <input type="text" id="userInput" placeholder="e.g., apple banana orange">
+
+
+    <button onclick="analyzer()">Enter</button>
+    <button onclick="lexical()">Lexical</button>
+    <button onclick="syntax()">Syntax</button>
+    <button onclick="semantic()">semantic</button>
+
+
+    <div id="array"></div>
+    <div id="lexi"></div>
+    <div id="lexi2"></div>
+    <div id="syntax"></div>
+    <div id="semantic"></div>
+</body>
+</html>
