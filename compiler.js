@@ -1,4 +1,13 @@
+var stringInput;
+var stringTokens;
 
+const assignOperator = '=';
+const delimiter = ';';
+const regexInt = /^-?\d+$/;
+const regexString = /^"[^"]*"$/;
+const regexChar = /^'.'$/;
+const regexDouble = /^-?\d+(\.\d+)?$/;
+const indentifier = /^[^"]+$/;
 
 
 function openFile() {
@@ -30,16 +39,6 @@ function eraseText() {
 
 function lexicalAnalyzer(){
 
-    const dataType = "int";
-    const assignOperator = '=';
-    const delimiter = ';';
-    const regexInt = /^-?\d+$/;
-    const regexString = /^"[^"]*"$/;
-    const regexChar = /^'.'$/;
-    const regexDouble = /^-?\d+(\.\d+)?$/;
-    const indentifier = /^[^"]+$/;
-    
-
 
     var textareaElement = document.getElementById('fileContent');
 
@@ -56,6 +55,7 @@ function lexicalAnalyzer(){
         listItem.textContent = lexemes[i];
         resultListElement.appendChild(listItem);
     }
+
 
     let tokens = [];
     let lexicalChecker = true;
@@ -103,7 +103,6 @@ function lexicalAnalyzer(){
         outputElement.innerHTML = "Lexical Error";
     }
 
-
     function splitString(input) {
         let split = [];
         let pattern = /\b(?:int|double|char|String|boolean)\b|[a-zA-Z_$][\w_$]*|"[^"\\]*(?:\\.[^"\\]*)*"|'[^'\\]*(?:\\.[^'\\]*)*'|\d+(?:\.\d+)?|[=;]/g;
@@ -114,6 +113,68 @@ function lexicalAnalyzer(){
         }
     
         return split;
+    }
+
+}
+
+function semanticAnalyzer(){
+
+    var textareaElement = document.getElementById('fileContent');
+
+    var inputValue = textareaElement.value;
+
+    var lines = inputValue.split('\n');
+
+    var valArray = [];
+
+    var outputArray = [];
+
+
+    lines.forEach(function(line){
+
+       valArray = line.split(' ');
+
+       if(valArray.length === 5){
+       
+            if (valArray[0] === "int" && valArray[3].match(regexInt)) {
+                    outputArray.push("[[Semantically Correct!]]");
+            }
+            else if(valArray[0] === "String" && valArray[3].match(regexString)){
+                    outputArray.push("[[Semantically Correct!]]");
+            }
+            else if(valArray[0] === "char" && valArray[3].match(regexChar)){
+                outputArray.push("[[Semantically Correct!]]");
+            }
+            else if(valArray[0] === "double" && valArray[3].match(regexDouble)){
+                outputArray.push("[[Semantically Correct!]]");
+            }
+            else{
+                outputArray.push("[[Semantically InCorrect!]]");
+            }
+       }
+       else if(valArray.length === 3){
+            //Do nothing
+       }
+       else{
+        outputArray.push("[[Semantically InCorrect!]]");
+        
+       }
+
+       valArray = [];
+    });
+
+
+
+    var outputArrayElement = document.getElementById("semList");
+    outputArrayElement.innerHTML = "SemList are:  \n" + outputArray.join('\n');
+
+    if(outputArray.includes("[[Semantically InCorrect!]]")){
+        var outputArrayElement = document.getElementById("output");
+        outputArrayElement.innerHTML = "Semantic Error";
+    }
+    else{
+        var outputArrayElement = document.getElementById("output");
+        outputArrayElement.innerHTML = "Semantic Passed";
     }
 
 

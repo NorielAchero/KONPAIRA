@@ -29,8 +29,8 @@
             <input type="file" id="fileInput" />
             <button class = "btn" onclick="openFile()">Open File</button>
             <button class = "btn" onclick ="lexicalAnalyzer()">Lexical</button>
-            <button class = "btn" onclick = "syntaxAnalyzer()">Syntax</button>
-            <button class = "btn" onclick = "semanticAnalyzer()">Semantic</button>
+            <button class = "btn" onclick ="syntaxAnalyzer()">Syntax</button>
+            <button class = "btn" onclick ="semanticAnalyzer()">Semantic</button>
             <button class = "btn" value="Clear" onclick="javascript:eraseText()">Clear</button>
 
         </div>
@@ -44,27 +44,17 @@
 
     </div>
 
-    <!-- <div>
-        <input type="file" id="fileInput" />
-        <button onclick="openFile()">Open File</button>
-        <button value="Clear" onclick="javascript:eraseText()">Clear</button>
-        <button onclick ="lexicalAnalyzer()">Lexical</button>
-        <button onclick = "syntaxAnalyzer()">Syntax</button>
-        <button onclick = "semanticAnalyzer()">Semantic</button>
-    </div>
-    <div>
-    <textarea rows="10" cols="50" class = "type-text" type = "text" placeholder="Type your text here!" id = "fileContent"></textarea>
-    </div>
-    <br>
-    <br> -->
     <h2>Lexemes</h2>
     <ul id="lexemeList"></ul>
 
     <h2>Tokens</h2>
     <ul id="tokenList"></ul>
 
-    <h2>Output</h2>
-    <div id = "output"></div>
+    <h2>SemList</h2>
+    <div id = "semList"></div>
+
+    <h2>SemOutput</h2>
+    <div id = "semOutput"></div>
 
 
 
