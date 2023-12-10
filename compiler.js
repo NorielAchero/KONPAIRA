@@ -1,5 +1,5 @@
-var stringInput;
-var stringTokens;
+let literalInput = "";
+let tokenList = "";
 
 const assignOperator = '=';
 const delimiter = ';';
@@ -16,18 +16,18 @@ function openFile() {
     var file = fileInput.files[0];
 
     if (file) {
-        // Use FileReader to read the contents of the file
+
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            // The file content is accessible here
+    
             var fileContent = e.target.result;
 
-            // Load the content into the text area
+   
             fileContentTextArea.value = fileContent;
         };
 
-        reader.readAsText(file); // You can use other methods like readAsDataURL for images
+        reader.readAsText(file); 
     } else {
         alert("Please choose a file first.");
     }
@@ -35,6 +35,8 @@ function openFile() {
 
 function eraseText() {
     document.getElementById("fileContent").value = "";
+    var outputArrayElement = document.getElementById("output");
+        outputArrayElement.innerHTML = " ";
 }
 
 function lexicalAnalyzer(){
@@ -43,55 +45,65 @@ function lexicalAnalyzer(){
     var textareaElement = document.getElementById('fileContent');
 
     var inputValue = textareaElement.value;
-
-    var lexemes = splitString(inputValue);
-
-    var resultListElement = document.getElementById('lexemeList');
-
-    resultListElement.innerHTML = '';
-
-    for (var i = 0; i < lexemes.length; i++) {
-        var listItem = document.createElement('li');
-        listItem.textContent = lexemes[i];
-        resultListElement.appendChild(listItem);
-    }
+    
+    var lines = inputValue.split('\n');
 
 
-    let tokens = [];
+   
     let lexicalChecker = true;
+
+
+    for(let line of lines){
+        console.log("HAHAHA")
+
+        var lexemes = splitString(line);
   
-    for(let lexeme of lexemes){
-     if(lexeme === "int" || lexeme === "double" || lexeme === "char" || lexeme === "String"){
-        tokens.push("<data_type>");
-     }
-     else if(lexeme === assignOperator){
-        tokens.push("<assignment_operator>");
-     }
-     else if(regexInt.test(lexeme) || regexString.test(lexeme) || regexChar.test(lexeme) || regexDouble.test(lexeme)){
-        tokens.push("<value>");
-     }
-     else if(lexeme === delimiter){
-        tokens.push("<delimiter>");
-     }
-     else if(indentifier.test(lexeme)){
-        tokens.push("<identifier>");
-     }
-     else{
-        tokens.push("<ERROR>");
-        lexicalChecker = false;
-     }
-     
-    }
+        for(let lexeme of lexemes){
+            
+        if(lexeme === "int" || lexeme === "double" || lexeme === "char" || lexeme === "String"){
+            literalInput += lexeme + " ";
+            console.log("<data_type> ");
+            tokenList += "data_type ";
+        }
+        else if(lexeme === assignOperator){
+            literalInput += lexeme + " ";
+            console.log("<assignment_operator> ")
+            tokenList += "assignment_operator ";
+        }
+        else if(regexInt.test(lexeme) || regexString.test(lexeme) || regexChar.test(lexeme) || regexDouble.test(lexeme)){
+            literalInput += lexeme + " ";
+            console.log("<value> ");
+            tokenList += "value ";
+        }
+        else if(lexeme === delimiter){
+            literalInput += lexeme + " ";
+            console.log("<delimiter> ");
+            tokenList += "delimiter ";
+        }
+        else if(indentifier.test(lexeme)){
+            literalInput += lexeme + " ";
+            console.log("<identifier> ");
+            tokenList += "identifier ";
+        }
+        else{
+            literalInput += lexeme + " ";
+            tokenList += "ERROR ";
+            lexicalChecker = false;
+        }
+        
+        }
+
+        lexemes = [];
+        literalInput += "|";
+        tokenList += "|";
+
+    }   
+
+    var lexemeListElement = document.getElementById('lexemeList');
+    lexemeListElement.innerHTML = literalInput;
 
     var tokenListElement = document.getElementById('tokenList');
-
-    tokenListElement.innerHTML = '';
-
-    for (var i = 0; i < tokens.length; i++) {
-        var listItem = document.createElement('li');
-        listItem.textContent = tokens[i];
-        tokenListElement.appendChild(listItem);
-    }
+    tokenListElement.innerHTML = tokenList;
 
 
     var outputElement = document.getElementById("output");
@@ -119,36 +131,43 @@ function lexicalAnalyzer(){
 
 function semanticAnalyzer(){
 
-    var textareaElement = document.getElementById('fileContent');
+    var lines = literalInput.split('|');
 
-    var inputValue = textareaElement.value;
-
-    var lines = inputValue.split('\n');
+    console.log(lines);
 
     var valArray = [];
 
     var outputArray = [];
+
+    console.log("Lines Lenght is " + line.length);
 
 
     lines.forEach(function(line){
 
        valArray = line.split(' ');
 
+        console.log("Line Lenght is " + valArray.length);
+
        if(valArray.length === 5){
        
             if (valArray[0] === "int" && valArray[3].match(regexInt)) {
+                console.log(valArray[0] + " 1 " + valArray[3]);
                     outputArray.push("[[Semantically Correct!]]");
             }
             else if(valArray[0] === "String" && valArray[3].match(regexString)){
+                console.log(valArray[0] + " 2 " + valArray[3]);
                     outputArray.push("[[Semantically Correct!]]");
             }
             else if(valArray[0] === "char" && valArray[3].match(regexChar)){
+                console.log(valArray[0] + " 3 " + valArray[3]);
                 outputArray.push("[[Semantically Correct!]]");
             }
             else if(valArray[0] === "double" && valArray[3].match(regexDouble)){
+                console.log(valArray[0] + " 4 " + valArray[3]);
                 outputArray.push("[[Semantically Correct!]]");
             }
             else{
+                console.log(valArray[0] + " 5 " + valArray[3] );
                 outputArray.push("[[Semantically InCorrect!]]");
             }
        }
@@ -156,6 +175,7 @@ function semanticAnalyzer(){
             //Do nothing
        }
        else{
+        console.log(valArray[0] + " " + valArray[3] + " Last");
         outputArray.push("[[Semantically InCorrect!]]");
         
        }
