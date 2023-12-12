@@ -4,30 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compiler</title>
-
-    <link rel="stylesheet" href="style.css">
+    <script src="js/compiler.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
 </head>
 <body>
-    
-    <label for="userInput">Enter space-separated values:</label>
-    <input type="text" id="userInput" placeholder="e.g., apple banana orange">
+
+    <section class = "bg">
+
+    <nav>
+        <a class="logo" href="#"><font class = "konpaira">KONPAIRA</font> ガンダム</a>
+        <div>
+        <a href="index.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        </div>
+    </nav>
 
 
-    <button onclick="analyze()">Enter</button>
-    <button onclick="lexical()">Lexical</button>
-    <button onclick="syntax()">Syntax</button>
-    <button onclick="semantic()">semantic</button>
+        <div class = "center-container">
+
+        <div class = "float-child">
+            <div class = "left-div">
+            
+                <button class = "enter" onclick="openFile()">ENTER</button>
+
+                <label for="fileInput" class="btn">Choose File</label>
+            <input type="file" id="fileInput" />
+                
+
+            </div>
+        </div>
+        <div class = "float-child">
+            <div class = "center-div">
+                <div class = "results" id = "output">RESULT</div>
 
 
-    <div id="array"></div>
-    <div id="lexi"></div>
-    <div id="lexi2"></div>
-    <div id="syntax"></div>
-    <div id="semantic"></div>
+                
+                <div class = "text-area">
+                    <textarea rows="20" cols="79" class = "fileContent" type = "text" placeholder="Type your text here!" id = "fileContent"></textarea>
+                </div>
+
+                <div class = "buttons">
+                    <center>
+                    <button class = "btn" onclick ="lexicalAnalyzer()">LEXICAL</button>
+                    <button class = "btn" onclick ="syntaxAnalyzer()">SYNTAX</button>
+                    <button class = "btn" onclick ="semanticAnalyzer()">SEMANTIC</button>
+                    </center>
+                    
+                </div> 
+            </div>
+
+            
+        </div>
+        <div class = "float-child">
+            <div class = "right-div">
+                test 3
+            </div>
+        </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+    <!-- <div class = "center">
+
+        <div class = "side-by-side">
+         
+            <label for="fileInput" class="btn">Choose File</label>
+            <input type="file" id="fileInput" />
+            <button class = "btn" onclick="openFile()">Open File</button>
+            <button class = "btn" onclick ="lexicalAnalyzer()">Lexical</button>
+            <button class = "btn" onclick ="syntaxAnalyzer()">Syntax</button>
+            <button class = "btn" onclick ="semanticAnalyzer()">Semantic</button>
+            <button class = "btn" value="Clear" onclick="javascript:eraseText()">Clear</button>
+
+        </div>
+        <div>
+            <div class = "outputDiv"><div class = "outputContainer" id ="output"></div></div>
+            
+            <textarea rows="10" cols="50" class = "fileContent" type = "text" placeholder="Type your text here!" id = "fileContent"></textarea>
+
+        </div>
+
+
+    </div> -->
+
+
+
 </body>
 </html>
+
+
+
+
+

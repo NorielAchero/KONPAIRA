@@ -39,11 +39,7 @@ body {
     height: 80vh;
   }
 
-  .side-by-side {
-    width: 50%; /* Adjust the width as needed */
-    box-sizing: border-box;
-    padding: 20px;
-  }
+
 
   .left-div {
     margin: auto; /* Center horizontally */
@@ -60,7 +56,7 @@ body {
 
   .gundam{
     font-family: 'Oswald', Arial, sans-serif;;
-    font-size: 100px;
+    font-size: 170px;
     color: #0051FF;
     margin-top: 0;
   }
@@ -84,74 +80,12 @@ body {
 }
 
 .splashArt{
-    height: 50%;
+    height: 300%;
     width: auto;
 }
 
 .konpaira{
   font-size: 35px;
-}
-
-.center{
-  display:flex;
-  justify-content:center;
-  margin:0 auto;
-  padding:5px 10px;
-  max-width: 80%;
-  max-height: 80%;
-  background-color: red;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.btn{
-  display: block;
-  margin-bottom: 10px; 
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  width: 200px;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-
-.side-by-side{
-    width: 50%; /* Set the width to 50% for each div */
-    float: left; /* Float the divs to the left */
-    box-sizing: border-box; /* Include padding and border in the box model */
-    padding: auto;
-}
-.outputDiv{
-  background-color: blue;
-  height: 10%;
-  width: 100%;
-  margin-top: 5.5%;
-}
-
-.outputContainer{
-  color: white;
-  justify-content: center;
-  text-align: center;
-  padding: 2%;
-}
-
-.fileContent{
-  margin-top: 3%;
-  height: 70%;
-}
-.output{
-  height: 10px;
-  width: 100%;
-  background-color: #0051FF;
 }
  
   footer {
@@ -163,8 +97,4 @@ input[type="file"] {
     bottom: 0;
     width: 100%;
     
-    
   }
-
-
-

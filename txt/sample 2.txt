@@ -1,0 +1,3 @@
+String n = "Hello World";
+int x = 123;
+double number;
