@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
@@ -21,13 +22,13 @@
         <nav>
             <a class="logo" href="#"><font class = "konpaira">KONPAIRA</font> ガンダム</a>
             <div>
-            <a href="index.html">Home</a>
+            <a href="#home">Home</a>
             <a href="#compiler">Konpaira</a>
-            <a href="aboutUs.html">About Us</a>
+            <a href="#about">About Us</a>
             </div>
         </nav>
        
-        
+        <a name = "home"></a>
             <center><div class = "content">
                 
                 <i>   3 BSCS 1</i><br>
@@ -50,7 +51,7 @@
         <div class = "center-div">
             <div class="container">
 
-                <div class="text-out">
+                <div class="outputDiv">
                     <center><span id = "output">KONPAIRA</span></center>
                 </div>
 
@@ -58,7 +59,7 @@
             
             <div class = "container">
                 <div class="buttons">
-                    <div class="fn-buttons">
+                    <div class="listButtons">
                         <div>
                             <input type="file" id="fileInput" style="display:none" onchange="openFile()">
                             <button class="btn" onclick="document.getElementById('fileInput').click()">OPEN FILE</button>
@@ -70,9 +71,9 @@
                     </div>
                 </div>
 
-                <div class="edit-area">
-                    <div class="text-in">
-                        <textarea class = "fileContent" type = "text" placeholder="Type your text here!" id = "fileContent"></textarea>
+                <div class="content-area">
+                    <div class="textAreaDiv">
+                        <textarea class = "fileContent" type = "text" placeholder="Type your variable declartion here!" id = "fileContent"></textarea>
                         
                         <script>
                             const textArea = document.getElementById("fileContent");
@@ -98,13 +99,91 @@
 
     </section>
 
-
+    <a name = "about"></a>
     <section class = "about">
+        <div class = "container-about">
+            <div class = "top-div">
+               
+                <center>
+                <img src = "images/ourteam.png" class = "ourteam" width="500">
+
+                <br>
+
+                <p style = "color: red;">
+                    Meet Noriel Achero, Angelo Gerard Mallari, and Samantha Pauline Ines, three outstanding New Era University third-year Computer Science students. Noriel excels at
+                    front-end development, demonstrating his ability to create an engaging and user-friendly interface for the website compiler. Angelo Gerard Mallari's coding knowledge
+                    is used on the back end to ensure the compiler's functionality is robust and efficient. Samantha Pauline Ines, with her keen eye for design, completes the picture by
+                    creating an aesthetically beautiful interface. These students constitute a talented team that has effectively combined their skills to create a well-rounded website compiler
+                    that demonstrates the combination of front-end finesse, back-end reliability, and design aesthetics.
+                </p>
+
+                </center>
+            </div>
+            <div class = "bot-div">
+                <div class = "child">
+                    
+                    <img src = "images/noy.jpg" width="80%">
+                    <br>
+                    <font class ="name">NORIEL ACHERO</font>
+                    <br>
+                    Front-end Developer/Back-end Developer
+                    <br><br>
+                    
+                        
+                            <a href="https://github.com/NorielAchero" class="fa fa-github"></a>
+                            <a href="https://www.linkedin.com/in/nrachero/" class="fa fa-linkedin"></a>
+                            <a href="mailto:acheronorielr@gmail.com" class="fa fa-google"></a>
+                            <a href="https://www.facebook.com/nrachero" class="fa fa-facebook"></a>
+                        
+                    
+
+                </div>
+            
+                <div class = "child">
+
+                    <img src = "images/anguri.jpg" width="80%">
+                    <br>
+                    <font class ="name">SAMANTHA PAULINE INES</font>
+                    <br>
+                    UI Designer/Front-end Developer
+                    <br><br>
+                    
+                        
+                    <a href="https://github.com/SamanthaPaulineInes" class="fa fa-github"></a>
+                    <a href="https://www.linkedin.com/in/samantha-pauline-ines-8a205b258/" class="fa fa-linkedin"></a>
+                    <a href="mailto:1023inessamantha@gmail.com" class="fa fa-google"></a>
+                    <a href="https://www.facebook.com/samanthapauline.ines/" class="fa fa-facebook"></a>
+                    
+                    
+
+                </div>
+                <div class = "child">
+
+                    <img src = "images/gewonk.jpg" width="80%">
+                    <br>
+                    <font class ="name">ANGELO GERARD MALLARI</font>
+                    <br>
+                    Back-end Developer
+                    <br><br>
+                    
+                        
+                    <a href="https://github.com/angewonk" class="fa fa-github"></a>
+                    <a href="https://www.linkedin.com/in/angelo-gerard-mallari-62163b136/" class="fa fa-linkedin"></a>
+                    <a href="mailto:angelomallari1123@gmail.com" class="fa fa-google"></a>
+                    <a href="https://www.facebook.com/angewoooh" class="fa fa-facebook"></a>
+                        
+                    
+                    
+
+                </div>
+            </div>
+            
+        </div>
 
 
     </section>
     <footer>
-        &copy; 2023 | Utang ni Samantha
+        &copy; 2023 | KONPAIRA 3 BSCS 1
       </footer>
 
 
