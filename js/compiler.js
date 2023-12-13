@@ -9,8 +9,13 @@ const regexChar = /^'.'$/;
 const regexDouble = /^-?\d+(\.\d+)?$/;
 const indentifier = /^[^"]+$/;
 
+let lexBtn = document.getElementById('lexical-btn');
+let synBtn = document.getElementById('syntax-btn');
+let semBtn = document.getElementById('semantic-btn');
+
 
 function openFile() {
+
     var fileInput = document.getElementById('fileInput');
     var fileContentTextArea = document.getElementById('fileContent');
     var file = fileInput.files[0];
@@ -25,24 +30,44 @@ function openFile() {
 
    
             fileContentTextArea.value = fileContent;
+
+            let lexBtn = document.getElementById('lexical-btn');
+            lexBtn.disabled = false;
         };
 
         reader.readAsText(file); 
-    } else {
-        alert("Please choose a file first.");
     }
+
 }
 
 function eraseText() {
     document.getElementById("fileContent").value = "";
     var outputArrayElement = document.getElementById("output");
-        outputArrayElement.innerHTML = " ";
+        outputArrayElement.innerHTML = "KONPAIRA";
+
+    let lexBtn = document.getElementById('lexical-btn');
+    let synBtn = document.getElementById('syntax-btn');
+    let semBtn = document.getElementById('semantic-btn');
+
+    lexBtn.disabled = true;
+    semBtn.disabled = true;
+    synBtn.disabled = true;    
+
+    literalInput = "";
+    tokenList = "";
+
+    let myTextarea = document.getElementById('fileContent');
+    myTextarea.readOnly = false;
+
 }
 
 function lexicalAnalyzer(){
 
 
     var textareaElement = document.getElementById('fileContent');
+
+    let myTextarea = document.getElementById('fileContent');
+    myTextarea.readOnly = true;
 
     var inputValue = textareaElement.value;
     
@@ -102,10 +127,12 @@ function lexicalAnalyzer(){
     var outputElement = document.getElementById("output");
 
     if(lexicalChecker === true){
-        outputElement.innerHTML = "Lexical Passed";
+        outputElement.innerHTML = "LEXICAL PASSED";
+        let synBtn = document.getElementById('syntax-btn');
+        synBtn.disabled = false;
     }
     else{
-        outputElement.innerHTML = "Lexical Error";
+        outputElement.innerHTML = "LEXICAL ERROR";
     }
 
     function splitString(input) {
@@ -152,6 +179,8 @@ function syntaxAnalyzer(){
     }
     else{
         outputElement.innerHTML = "SYNTAX PASSED";
+        let semBtn = document.getElementById('semantic-btn');
+        semBtn.disabled = false;
     }
 
 }
@@ -219,13 +248,15 @@ function semanticAnalyzer(){
 
     if(outputArray.includes("[[Semantically InCorrect!]]")){
         var outputArrayElement = document.getElementById("output");
-        outputArrayElement.innerHTML = "Semantic Error";
+        outputArrayElement.innerHTML = "SEMANTIC ERROR";
     }
     else{
         var outputArrayElement = document.getElementById("output");
-        outputArrayElement.innerHTML = "Semantic Passed";
+        outputArrayElement.innerHTML = "SEMANTIC PASSED";
     }
 
 
 }
+
+
 

@@ -1,274 +1,231 @@
 body {
-    font-family: 'Roboto', Arial, sans-serif;;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
+  font-family: 'Roboto', Arial, sans-serif;;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
 
-  }
+}
 
 /* Navigation Bar */
 
 nav {
-    background-color: #ffffff;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+  background-color: #ffffff;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
 }
 nav .logo {
-    color: #FF0000;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
+  color: #FF0000;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 nav a {
-    color: #FF0000;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    display: inline-block;
+  color: #FF0000;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  display: inline-block;
 }
 
 nav a:hover {
-    background-color: #FF0000;
-    color: white;
+  background-color: #FF0000;
+  color: white;
 }
 
 .konpaira{
-  font-size: 35px;
+font-size: 35px;
 }
 
 .banner{
-  background-size: cover; 
-  height: 100vh;
-  background-position: fixed;
-  animation: animate 25s ease-in-out infinite;
-
-
+background-size: cover; 
+height: 100vh;
+background-position: fixed;
+background-image: url("https://cdn.discordapp.com/attachments/885103849831030785/1184505636193566771/bg3.png?ex=658c37d6&is=6579c2d6&hm=061eefca99f90911f7e776a1fb0e28c22a766db2c8712e19c18cb3db6a142d06&");
+background-repeat: no-repeat;
+background-size: cover;
 }
 
-
-@keyframes animate{
-	0%,100%{
-		background-image: url(1.gif);
-	}	
-	25%{
-		background-image: url(1.gif);
-	}
-	50%{
-		background-image: url(1.gif);
-	}	
-	75%{
-		background-image: url(1.gif);
-	}				
-}
 
 .content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color:#FF0000;
-  width: 600px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color:#FF0000;
+width: 600px;
+
 }
 
 
 
 .gundam{
-  font-family: 'Oswald', Arial, sans-serif;;
-  font-size: 70px;
-  color: #0051FF;
-  margin-top: 0;
+font-family: 'Oswald', Arial, sans-serif;;
+font-size: 70px;
+color: #0051FF;
+margin-top: 0;
+text-shadow: 5px 5px rgba(0, 0, 0, 0.2)
 }
-  
+
 .sBtn {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #fff23d;
-  border: none;
-  border-radius: 15px;
-  width: 150px;
-    
+display: inline-block;
+padding: 15px 25px;
+font-size: 24px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #FFD500;
+border: none;
+border-radius: 15px;
+width: 150px;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5)
+  
 }
 
 .sBtn:hover {
-  background-color: #b9b24c;
+background-color: #b9b24c;
 }
 
 .sBtn:active{
-  background-color: #b9b24c;
-  transform: translateY(4px);
+background-color: #b9b24c;
+transform: translateY(4px);
 }
 
-
-.compiler{
-  background-color: rgb(255, 0, 0);
-  height: 100vh;
-}
 
 .about{
-  background-color: rgb(68, 0, 255);
-  height: 100vh;
+background-color: rgb(68, 0, 255);
+height: 100vh;
 }
 
 footer {
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  bottom: 0;
-  width: 100%;
-  
-  
+background-color: #000;
+color: white;
+text-align: center;
+padding: 20px;
+bottom: 0;
+width: 100%;
+
+
 }
 
 
 /* Compiler */
 
+
+.compiler{
+height: 100vh;
+background-image: url("https://cdn.discordapp.com/attachments/885103849831030785/1184506621716598824/385525598_1533894614115247_896987862263615960_n.png?ex=658c38c1&is=6579c3c1&hm=51f580abb4482bb1d59e3fb4dafe1327fa92aad0bff233b6ebf53313afb6a50e&");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: fixed;
+
+}
+
+.center-div{
+position: absolute;
+top: 150%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
 .container {
-  display:flex;
-  justify-content:center;
-  margin:0 auto;
-  padding:5px 10px;
-  max-width: 1200px;
-  background-color: #000;
-  margin-top: 10px;
-  
+display:flex;
+margin:0 auto;
+padding:5px 10px;
+max-width: 1200px;
+background-color: #000;
+margin-top: 10px;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5)
+
+}
+
+
+.text-out{
+display: flex;
+width: 100%;
+background-color: red;
+align-items: center;
+justify-content: center; /* Added to center content vertically */
+height: 50px;
+margin: 5px;
+text-align: center;
+color: white;
+font-size: 40px;
+
 }
 
 .buttons {
-  display:block;
-  width: 300px;
+display:block;
+width: 300px;
 }
 
 .fn-buttons {
-  display: flex;
-  background-color: #005252;
-  border-radius:18px 8px 8px 18px;
-  justify-content: flex-end;
-  align-items: center;
+display: flex;
+background-color: #000000;
+justify-content: flex-end;
+align-items: center;
+margin: 5px;
+padding: 10px;
 }
 
 .btn{
-  display: block;
-  background-color: #00a6c7;
-  color:#ffffff;
-  width: 100%;
-  height: 60px;
-  cursor: pointer;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-family: 'M PLUS Rounded 1c';
-  font-weight: bolder;
-  font-size: 100%;
-  letter-spacing: 3px;
-  border-style: none;
-  transition: 0.3s ease;
+display: inline-block;
+padding: 15px 25px;
+font-size: 24px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #FFD500;
+border: none;
+border-radius: 15px;
+width: 150px;
+width: 100%;
+margin-top: 10px;
+margin-bottom: 10px;
 }
 
 .btn:disabled {
-  background-color: #ccc;
-  color:#7a878a;
-  cursor: not-allowed;
-  background-color: #465b5f;
+opacity: 0.6;
+cursor: not-allowed;
 }
 
-.modeBtn {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  padding: 5px;
-  letter-spacing: 5px;
-  font-size: 1em;
-  
-}
-.modeBtn span{
-  color:#ffffff;
-  font-weight: bold;
-}
-
-.btn-analyzers{
-  display: inline-block;
-  width: 100%;
-}
-
-.btn-0 {
-  border-radius:18px 8px 8px 18px;
-}
-
-.btn-1 {
-  border-radius:0px 8px 0px 0px;
-}
-
-.btn-3 {
-  border-radius:0px 0px 8px 0px;
-}
-
-.clr-button{
-  
-}
-.btn-clear {
-  transition:none;
-  fill: #ffffff;
-  background-color: #df5858;
-  width: 40px;
-  height: 40px;
-  margin-left: -50px;
-  margin-top: 130px;
-  border-radius: 10px;
-}
-
-.btn-clear:disabled{
-  background-color: #ca9898;
-  fill: #ffecec;
-}
-
-.text-out{
-  display: flex;
-  width:890px;
-  margin-left: 10px;
-  background-color: #0C5776;
-  align-items: center;
-  border-radius:8px 18px 18px 8px;
-}
-
-.text-out span{
-  padding-left: 1em;
-  color: white;
+.btn:active{
+transform: translateY(4px);
 }
 
 .edit-area {
-  width:890px;
-  display:flex;
-  margin-left: 10px;
-  
+width:890px;
+display:flex;
+margin-left: 10px;
+
 }
 
 .text-in {
-  width:100%;
-  height: stretch;
-  
+width:100%;
+height: stretch;
+background-color: #000000;
+margin: 5px;
+padding: 30px 30px 30px 0px;
+
 }
 
 .text-in textarea{
-  font-family: "JetBrains";
-  font-size: large;
-  color: black;
-  text-align: start;
-  padding: 1em;
-  width: 100%;
-  height: 100%;
-  resize: none;
-  border-radius:8px 18px 18px 8px;
+color: black;
+text-align: start;
+width: 100%;
+height: 100%;
+resize: none;
+border: 2px solid #ccc; /* Border width and color */
+border-radius: 8px; /* Border radius for rounded corners */
 }
 
