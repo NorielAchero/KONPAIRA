@@ -15,20 +15,22 @@
 </head>
 <body>
 
+    <nav>
+        <a class="logo" href="#"><font class = "konpaira">KONPAIRA</font> ガンダム</a>
+        <div>
+        <a href="index.html">Home</a>
+        <a href="#compiler">Konpaira</a>
+        <a href="aboutUs.html">About Us</a>
+        </div>
+    </nav>
+
     <section class = "banner">
-        <nav>
-            <a class="logo" href="#"><font class = "konpaira">KONPAIRA</font> ガンダム</a>
-            <div>
-            <a href="index.html">Home</a>
-            <a href="compiler.html">Konpaira</a>
-            <a href="aboutUs.html">About Us</a>
-            </div>
-        </nav>
+       
         
-            <div class = "content">
+            <center><div class = "content">
                 
                 <i>   3 BSCS 1</i><br>
-                <font class = "gundam">GUNDAM</font><br>
+                <font class = "gundam">GUNDAM KONPAIRA</font><br>
 
                 <p class = "paragraph">
                     Compiler is a program that translates a program from one language (the source) to another (the target) and consists of different phases namely Lexical Analysis, Syntax Analysis, Semantic Analysis, Intermediate Code Generator, and Code Generator.
@@ -37,9 +39,61 @@
                 <a href="compiler.html" class = "sBtn">START</a>
                 
             </div>
+            </center>
        
     </section>
+    <a name = "compiler"></a>
+    <section class = "compiler">
+        
 
+        <br><br><br><br><br><br><br>
+        <div class="container">
+
+            <!-- <div class="buttons">
+                <input type="file" id="fileInput" style="display:none" accept=".java, .txt" onchange="loadFile()">
+                <button class="btn btn-0" id="opnButton" onclick="document.getElementById('fileInput').click()">OPEN FILE</button>
+            </div> -->
+
+            <div class="text-out">
+                <span>Result:</span>
+                <span id = "resultOutput">Waiting for input!</span>
+            </div>
+
+        </div>
+
+        <div class = "container">
+            <div class="buttons">
+                <div class="fn-buttons">
+                    
+                    <div>
+                        <input type="file" id="fileInput" style="display:none" accept=".java, .txt" onchange="loadFile()">
+                    <button class="btn btn-0" id="opnButton" onclick="document.getElementById('fileInput').click()">OPEN FILE</button>
+                        <button class="btn  btn-analyzers btn-1" id="lxmButton" disabled onclick="analyzeLexeme()">Lexeme</button>
+                        <button class="btn  btn-analyzers btn-2" id="stxButton" disabled onclick="analyzeSyntax()">Syntax</button>
+                        <button class="btn  btn-analyzers btn-3" id="stcButton" disabled onclick="analyzeSmntix()">Semantics</button>
+                        <button class="btn  btn-analyzers btn-3" id="stcButton" disabled onclick="analyzeSmntix()">Semantics</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-area">
+                <div class="text-in">
+                    <textarea type="text" placeholder="Type your code here..." id = "codeForAnalysis" oninput="handleTextareaInput(this)"></textarea>
+                </div>
+        
+            </div>
+        
+        </div>
+
+    
+
+    </section>
+
+
+    <section class = "about">
+
+
+    </section>
     <footer>
         &copy; 2023 | Utang ni Samantha
       </footer>
