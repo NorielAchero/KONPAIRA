@@ -85,7 +85,7 @@ function lexicalAnalyzer(){
   
         for(let lexeme of lexemes){
             
-        if(lexeme === "int" || lexeme === "double" || lexeme === "char" || lexeme === "String"){
+        if(lexeme === "int" || lexeme === "double" || lexeme === "char" || lexeme === "String" || lexeme === "boolean"){
             literalInput += lexeme + "|";
             console.log("<data_type> ");
             tokenList += "data_type ";
@@ -95,7 +95,7 @@ function lexicalAnalyzer(){
             console.log("<assignment_operator> ")
             tokenList += "assignment_operator ";
         }
-        else if(regexInt.test(lexeme) || regexString.test(lexeme) || regexChar.test(lexeme) || regexDouble.test(lexeme)){
+        else if(regexInt.test(lexeme) || regexString.test(lexeme) || regexChar.test(lexeme) || regexDouble.test(lexeme) || lexeme === "true" || lexeme === "false"){
             literalInput += lexeme + "|";
             console.log("<value> ");
             tokenList += "value ";
@@ -224,8 +224,16 @@ function semanticAnalyzer(){
                         console.log(valArray[0] + " 4 " + valArray[3]);
                         outputArray.push("[[Semantically Correct!]]");
                     }
+                    else if(valArray[0] === "boolean" && valArray[3].match("true")){
+                        console.log(valArray[0] + " 5 " + valArray[3]);
+                        outputArray.push("[[Semantically Correct!]]");
+                    }
+                    else if(valArray[0] === "boolean" && valArray[3].match("false")){
+                        console.log(valArray[0] + " 6 " + valArray[3]);
+                        outputArray.push("[[Semantically Correct!]]");
+                    }
                     else{
-                        console.log(valArray[0] + " 5 " + valArray[3] );
+                        console.log(valArray[0] + " 7 " + valArray[3] );
                         outputArray.push("[[Semantically InCorrect!]]");
                     }
             }
