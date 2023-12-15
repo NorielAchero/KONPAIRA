@@ -11,7 +11,8 @@ Java Compiler Project for Theory of Programming Language Course
 # ABOUT US Section
 ![image](https://github.com/NorielAchero/KONPAIRA/assets/142378544/bbacd1d6-e91a-45de-ad7f-695b4a8cc9ad)
 
-
+# HOW TO USE CONPAIRA
+![Result Text Area](https://github.com/NorielAchero/KONPAIRA/assets/142378544/7702232f-9be8-4a10-bea2-424ed4c0f2a1)
 
 
 
