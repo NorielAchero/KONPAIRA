@@ -130,9 +130,14 @@ function lexicalAnalyzer(){
         outputElement.innerHTML = "LEXICAL PASSED";
         let synBtn = document.getElementById('syntax-btn');
         synBtn.disabled = false;
+
+        let lexBtn = document.getElementById('lexical-btn');
+        lexBtn.disabled = true;
     }
     else{
         outputElement.innerHTML = "LEXICAL ERROR";
+        let lexBtn = document.getElementById('lexical-btn');
+        lexBtn.disabled = true;
     }
 
     function splitString(input) {
@@ -176,11 +181,15 @@ function syntaxAnalyzer(){
 
     if(syntaxCheck.includes("NO")){
         outputElement.innerHTML = "SYNTAX ERROR";
+        let synBtn = document.getElementById('syntax-btn');
+        synBtn.disabled = true;
     }
     else{
         outputElement.innerHTML = "SYNTAX PASSED";
         let semBtn = document.getElementById('semantic-btn');
         semBtn.disabled = false;
+        let synBtn = document.getElementById('syntax-btn');
+        synBtn.disabled = true;
     }
 
 }
@@ -257,10 +266,15 @@ function semanticAnalyzer(){
     if(outputArray.includes("[[Semantically InCorrect!]]")){
         var outputArrayElement = document.getElementById("output");
         outputArrayElement.innerHTML = "SEMANTIC ERROR";
+
+        let semBtn = document.getElementById('semantic-btn');
+        semBtn.disabled = true;
     }
     else{
         var outputArrayElement = document.getElementById("output");
         outputArrayElement.innerHTML = "SEMANTIC PASSED";
+        let semBtn = document.getElementById('semantic-btn');
+        semBtn.disabled = true;
     }
 
 
