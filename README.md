@@ -1,7 +1,7 @@
 # KONPAIRA
 Java Compiler Project for Theory of Programming Language Course
 
-<a href="norielachero.github.io/KONPAIRA/">norielachero.github.io/KONPAIRA/</a>
+norielachero.github.io/KONPAIRA/
 
 
 # HOME Section
